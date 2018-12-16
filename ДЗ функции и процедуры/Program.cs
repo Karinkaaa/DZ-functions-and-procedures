@@ -607,5 +607,22 @@ namespace ДЗ_функции_и_процедуры
             }
             return res;
         }
+
+        static int Ack(int n, int m)
+        {
+            int res;
+            if (n == 0)
+            {
+                res = m + 1;
+            }
+            else
+            {
+                if (m == 0)
+                    res = Ack(n - 1, 1);
+                else
+                    res = Ack(n - 1, Ack(n, m - 1));
+            }
+            return res;
+        }
     }
 }
